@@ -1,6 +1,6 @@
-def call(String buildstatus,String recipient) {
-  def subject = "${buildStatus}: Job ${env.JOB_NAME} - ${env.BUILD_NUMBER}"
-  def body = """<html>
+def call(String buildStatus, String recipient) {
+    def subject = "${buildStatus}: Job ${env.JOB_NAME} - ${env.BUILD_NUMBER}"
+    def body = """<html>
                  <head>
                     <style>
                         body {
@@ -71,5 +71,5 @@ def call(String buildstatus,String recipient) {
         body: body,
         mimeType: 'text/html',
         to: recipient
-    )   
+    )
 }
